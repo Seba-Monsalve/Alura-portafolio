@@ -414,18 +414,18 @@ section.experience {
 section.formcontato {
     background-color: #EAF2FD;
     padding: 3em;
+    height: 100%;
 
     h2 {
         margin: 0;
     }
 
-    height: 100%;
 
     .formcontato__contacto {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
-        gap: 16px;
+        gap: 10px;
     }
 
 
@@ -440,7 +440,8 @@ section.formcontato {
         flex-flow: column wrap;
         justify-content: space-around;
         align-items: start;
-        height: 80%;
+        gap: 16px;
+
     }
 
     .formcontato__input,
@@ -449,12 +450,15 @@ section.formcontato {
         border: transparent;
         padding: 2em;
         resize: none;
+        outline: none;
+
     }
 
     .formcontato__input:focus,
     .formcontato__textarea:focus {
-        outline: #2A7AE4;
-        border-bottom: #2A7AE4;
+        outline-color: #2A7AE4;
+        border-bottom: 2px solid;
+        border-color: #2A7AE4;
     }
 
     .formcontato__botao {
@@ -550,9 +554,6 @@ Utiliza las referencias de los breakpoints @media abajo */
     }
 
     /*Hobbies*/
-    body {
-        background-color: red;
-    }
 
     section.academic {
 
@@ -688,17 +689,25 @@ Utiliza las referencias de los breakpoints @media abajo */
                 text-align: center;
                 margin: 0;
             }
+        }
 
-            /*Contacto*/
-
-            section.formcontato {
-                .formcontato__img {
-                    display: none;
-                }
+        /*Contacto*/
+        section.formcontato {
+            .formcontato__img {
+                display: none;
             }
 
-            /*Footer*/
+            .formcontato__title,
+            .formcontato__subtext {
+                margin-bottom: 1em;
+            }
 
+            input {
+                margin: 1em 0;
+            }
         }
+
+        /*Footer*/
+
     }
 }
