@@ -17,8 +17,18 @@ html {
 
 * {
     box-sizing: border-box;
-
 }
+
+fieldset {
+    width: 100%;
+    border: none;
+}
+
+.mensaje-error {
+    margin: 1em;
+    background-color: rgba(247, 107, 107, 0.582);
+}
+
 
 body {
     box-sizing: border-box;
@@ -40,7 +50,6 @@ li {
 a {
     text-decoration: none;
     color: var(--cor-de-link);
-
 }
 
 /*En este desafío nosostros gustaríamos que ustedes intentaran utilizar la metodología BEM. 
@@ -63,6 +72,19 @@ h2 {
     margin: 1em 0;
 }
 
+button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.disable {
+    opacity: 0.2;
+}
+
+.disable:hover {
+    cursor: not-allowed;
+    opacity: 0.2;
+}
 
 /*Sección Menu*/
 section.menu {
@@ -78,6 +100,11 @@ section.menu {
         img {
             height: 24px;
             padding-right: 0.5em;
+            transition: all 0.5s;
+        }
+
+        img:hover {
+            box-shadow: inset 5em 1em gold;
         }
 
     }
@@ -92,16 +119,23 @@ section.menu {
         display: flex;
         gap: 32px;
 
+
+        border-bottom: 2px solid transparent;
+        transition: ease 0.5s;
     }
+
 
     .menu__list__item {
         font-weight: 500;
         font-size: 16px;
         color: red;
-
-
+        border-bottom: 2px solid transparent;
+        transition: ease 0.5s;
     }
 
+    .menu__list__item:hover {
+        border-bottom: 2px solid gray;
+    }
     .menu__list__item__contato {
         font-weight: 700;
 
@@ -126,53 +160,62 @@ section.title {
         padding: 20px 32px;
     }
 
-    .title__profile {
-        height: min(30%, 368px);
-        width: min(30%, 368px);
-        max-width: 100%;
-        max-height: 100%;
-        margin: auto;
-    }
+}
 
-    .title__container {
-        display: flex;
-        flex-flow: column wrap;
-        margin: auto;
-        padding-right: 2em;
 
-    }
+.title__profile {
+    height: min(30%, 368px);
+    width: min(30%, 368px);
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
 
-    .title__bio {
-        font-size: 52px;
-        font-weight: 700;
-        color: #464646;
+.title__container {
+    display: flex;
+    flex-flow: column wrap;
+    margin: auto;
+    padding-right: 2em;
 
-    }
+}
 
-    .title__subsection {
-        font-size: 22px;
-        font-weight: 400;
-        line-height: 25.83px;
-        color: #464646;
-    }
+.title__bio {
+    font-size: 52px;
+    font-weight: 700;
+    color: #464646;
 
-    .title__network {
-        display: flex;
-        align-items: start;
-        justify-content: space-between;
-        gap: 32px;
-        padding: 0;
-        color: #464646;
+}
 
-    }
+.title__subsection {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 25.83px;
+    color: #464646;
+}
 
-    .title__network__item {
-        display: flex;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 18.78px;
-    }
+.title__network {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 0;
+    color: #464646;
 
+}
+
+.title__network__item {
+    display: flex;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18.78px;
+
+    border-bottom: 2px solid transparent;
+    transition: ease 0.5s;
+}
+
+.title__network__item:hover {
+    transform: translateY(-0.5em);
+    border-bottom: 2px solid gray;
 }
 
 /*Sección About*/
@@ -240,6 +283,7 @@ section.hobbies {
 
     }
 
+
     .skills__box,
     .hobbies__box {
         background-color: white;
@@ -250,12 +294,10 @@ section.hobbies {
         justify-content: flex-end;
         align-items: flex-start;
         padding: 0 0 1.2em 0.8em;
+        transition: all 1s;
 
-        .skills__img,
-        .hobbies__img {
-            height: 32px;
-            color: #2A7AE4;
-        }
+        border: 2px solid transparent;
+
 
         .skills__name,
         .hobbies__name {
@@ -265,6 +307,12 @@ section.hobbies {
             color: #464646;
         }
     }
+
+    .skills__box:hover,
+    .hobbies__box:hover {
+        border: 2px solid gray;
+    }
+
 
 }
 
@@ -351,6 +399,14 @@ section.experience {
     gap: 64px;
     padding: 2em;
 
+    img {
+        transition: all 0.2s;
+    }
+
+    img:hover {
+        border-radius: 5em;
+        border: 2px solid gray;
+    }
 
     .experience__box {
         display: flex;
@@ -554,12 +610,9 @@ Utiliza las referencias de los breakpoints @media abajo */
     }
 
     /*Hobbies*/
-
     section.academic {
-
         .academic__courses {
             .academic__courses__box {
-
 
                 /*Formación Académica*/
                 .academic__courses__item__img {
